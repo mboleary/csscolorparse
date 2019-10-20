@@ -105,3 +105,4 @@ venv.bak/
 
 # CSS files in css directory
 /css/*
+log.txt

@@ -39,7 +39,9 @@ function createGrid() {
     }
 
     // Build the grid
-    let keys = Object.keys(obj);
+    let keys = Object.keys(obj).sort((a, b) => {
+        return obj[b].length - obj[a].length;
+    });
     keys.forEach((key) => {
         let div = document.createElement("div");
         let title = document.createElement("p");
@@ -91,8 +93,7 @@ function isTextDark(str) {
 
 function updateDetails(e) {
     console.log("Updated Details!", e.target.data);
-    
-    
+
     if (e.target.data) {
         if (multiMode) {
             let checkbox = e.target.querySelector("input");
@@ -111,38 +112,9 @@ function updateDetails(e) {
                 updateDetailsPane(details, e.target.data.key);
             } else {
                 let details = addPane(e.target.data.key);
+                updateDetailsPane(details, e.target.data.key);
             }
         }
-
-        
-        // // Delete the old children
-        // while (details.firstChild) {
-        //     details.removeChild(details.firstChild);
-        // }
-
-        // // Add New Title
-        // let title = document.createElement("div");
-        // if (isTextDark(e.target.data.key)) {
-        //     title.setAttribute("class", "title dark");
-        // } else {
-        //     title.setAttribute("class", "title light");
-        // }
-        // title.style.backgroundColor = e.target.data.key;
-        // let titleHeader = document.createElement("h1");
-        // titleHeader.innerText = e.target.data.key;
-        // title.appendChild(titleHeader);
-        // details.appendChild(title);
-
-        // // Add new selectors
-        // obj[e.target.data.key].forEach((item) => {
-        //     let sel = document.createElement("div");
-        //     sel.setAttribute("class", "selector");
-        //     let code = document.createElement("code");
-        //     code.innerText = item;
-        //     sel.appendChild(code);
-        //     sel.style.borderLeftColor = e.target.data.key;
-        //     details.appendChild(sel);
-        // })
     }
 }
 

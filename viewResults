@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Parsing the CSS files..."
-python3 parse.py
+python3 parse.py > log.txt
 
 echo "Showing Results"
 cp results.json viewer/results.json

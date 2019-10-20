@@ -256,24 +256,24 @@ def parseColor(value):
         if len(value) - prefix >= 9 and value[prefix + 1:prefix + 1 + 8].find(" ") == -1:
             # 8-character version
             rstr = value[prefix + 1 : prefix + 1 + 2]
-            bstr = value[prefix + 1 + 2 : prefix + 1 + 4]
-            gstr = value[prefix + 1 + 4 : prefix + 1 + 6]
+            gstr = value[prefix + 1 + 2 : prefix + 1 + 4]
+            bstr = value[prefix + 1 + 4 : prefix + 1 + 6]
             astr = value[prefix + 1 + 6 : prefix + 1 + 8]
-            print("Parsed Hex8 Color: ", rstr, bstr, gstr, astr)
+            print("Parsed Hex8 Color: ", rstr, gstr, bstr, astr)
         elif len(value) - prefix >= 7 and value[prefix + 1:prefix + 1 + 6].find(" ") == -1:
             # 6-character Version
             rstr = value[prefix + 1 : prefix + 1 + 2]
-            bstr = value[prefix + 1 + 2 : prefix + 1 + 4]
-            gstr = value[prefix + 1 + 4 : prefix + 1 + 6]
+            gstr = value[prefix + 1 + 2 : prefix + 1 + 4]
+            bstr = value[prefix + 1 + 4 : prefix + 1 + 6]
             astr = "FF"
-            print("Parsed Hex6 Color: ", rstr, bstr, gstr)
+            print("Parsed Hex6 Color: ", rstr, gstr, bstr)
         elif len(value) - prefix >= 4 and value[prefix + 1:prefix + 1 + 3].find(" ") == -1:
             # 3-character version
             rstr = value[prefix + 1] + value[prefix + 1]
-            bstr = value[prefix + 1 + 1] + value[prefix + 1 + 1]
-            gstr = value[prefix + 1 + 2] + value[prefix + 1 + 2]
+            gstr = value[prefix + 1 + 1] + value[prefix + 1 + 1]
+            bstr = value[prefix + 1 + 2] + value[prefix + 1 + 2]
             astr = "FF"
-            print("Parsed Hex3 Color: ", rstr, bstr, gstr)
+            print("Parsed Hex3 Color: ", rstr, gstr, bstr)
         r = int(rstr, 16)
         g = int(gstr, 16)
         b = int(bstr, 16)
