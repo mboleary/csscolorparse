@@ -1,0 +1,99 @@
+:root {
+    
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.color {
+    min-height: 10vh;
+    min-width: 10vh;
+    padding: 5px;
+}
+
+.color input {
+    position: relative;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.color .title {
+    text-align: center;
+    margin: 0;
+    pointer-events: none;
+}
+
+.color .title.light {
+    color: white;
+}
+
+.color .title.dark {
+    color: black;
+}
+
+.color .subtitle {
+    text-align: center;
+    margin: 0;
+    pointer-events: none;
+}
+
+.color .subtitle.light {
+    color: #aaa;
+}
+
+.color .subtitle.dark {
+    color: #ccc;
+}
+
+.details .title {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.details .title h1 {
+    height: 100%;
+    margin: 0px;
+    text-align: center;
+}
+
+.details .title.light {
+    color: white;
+}
+
+.details .title p {
+    height: 100%;
+    margin: 0px;
+    text-align: center;
+}
+
+.details .title.dark {
+    color: black;
+}
+
+.selector {
+    border: 1px solid #eee;
+    border-left: 5px solid #ccc;
+    padding-left: 5px;
+}
+
+.paneContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.details {
+    flex: 1 1 auto;
+}
