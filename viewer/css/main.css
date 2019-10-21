@@ -8,6 +8,8 @@ body {
 
 header {
     text-align: center;
+    border-bottom: 1px solid #333;
+    padding: 5px;
 }
 
 .gridContainer {
@@ -15,45 +17,45 @@ header {
     grid-template-columns: repeat(10, 1fr);
 }
 
-.color {
+.gridContainer .color {
     min-height: 10vh;
     min-width: 10vh;
     padding: 5px;
 }
 
-.color input {
+.gridContainer .color input {
     position: relative;
     top: 0;
     left: 0;
     pointer-events: none;
 }
 
-.color .title {
+.gridContainer .color .title {
     text-align: center;
     margin: 0;
     pointer-events: none;
 }
 
-.color .title.light {
+.gridContainer .color .title.light {
     color: white;
 }
 
-.color .title.dark {
+.gridContainer color .title.dark {
     color: black;
 }
 
-.color .subtitle {
+.gridContainer .color .subtitle {
     text-align: center;
     margin: 0;
     pointer-events: none;
 }
 
-.color .subtitle.light {
-    color: #aaa;
+.gridContainer .color .subtitle.light {
+    color: #bbb;
 }
 
-.color .subtitle.dark {
-    color: #ccc;
+.gridContainer .color .subtitle.dark {
+    color: #333;
 }
 
 .details .title {
@@ -96,4 +98,39 @@ header {
 
 .details {
     flex: 1 1 auto;
+}
+
+.selectorViewer .title {
+    text-align: center;
+}
+
+.selectorViewer .selectorContainer {
+    border: 1px solid #eee;
+    border-left: 5px solid #333;
+    color: black;
+    padding: 5px;
+}
+
+.selectorViewer .selectorContainer p {
+    margin: 0px;
+    font-family: mono;
+    pointer-events: none;
+}
+
+.selectorViewer .selectorContainer .color {
+    margin-left: 5px;
+    padding: 5px;
+    pointer-events: none;
+}
+
+.selectorViewer .selectorContainer .color p {
+    pointer-events: none;
+}
+
+.selectorViewer .selectorContainer .color.light p {
+    color: white;
+}
+
+.selectorViewer .selectorContainer .color.dark p {
+    color: black;
 }

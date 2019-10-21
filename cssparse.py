@@ -245,9 +245,11 @@ def parseColor(value):
     a = 0
     prefix = -1
 
+    # @TODO Parse Other Things like gradients, or multiple colors from a single string
+
     # Try parsing as a hex string
-    prefix = value.find("#")
-    if prefix != -1:
+    if value.find("#") != -1:
+        prefix = value.find("#")
         print("Found a Hex Color:", value, value[prefix + 1:prefix + 1 + 6])
         rstr = ""
         bstr = ""
@@ -274,27 +276,30 @@ def parseColor(value):
             bstr = value[prefix + 1 + 2] + value[prefix + 1 + 2]
             astr = "FF"
             print("Parsed Hex3 Color: ", rstr, gstr, bstr)
+        
         r = int(rstr, 16)
         g = int(gstr, 16)
         b = int(bstr, 16)
         a = int(astr, 16)
 
     # rgba value
-    prefix = value.find("rgba(")
-    if prefix != -1:
+    
+    elif value.find("rgba(") != -1:
+        prefix = value.find("rgba(")
         # @TODO Finish This
         pass
     
     # css variable (not supported)
-    prefix = value.find("var(")
-    if prefix != -1:
+    elif value.find("var(") != -1:
         print("CSS Variables are not yet supported!")
-        return
+        return "var"
 
     # Try searching for predefined colors
-    for val in value.split(" "):
-        if val in PREDEF_COLORS.keys():
-            return parseColor(PREDEF_COLORS[val])
+    else:
+        for val in value.split(" "):
+            if val in PREDEF_COLORS.keys():
+                return parseColor(PREDEF_COLORS[val])
+        return value
     
     return "rgba({}, {}, {}, {})".format(r,g,b,a)
 
